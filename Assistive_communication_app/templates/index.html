@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sign Bridge | Major Project 2026</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <iframe name="hidden_frame" style="display:none;"></iframe>
+    <div class="animated-bg"></div>
+    <div class="mesh-gradient"></div>
+
+    <main class="main-container">
+        <nav class="side-nav">
+            <div class="logo">
+                <div class="logo-icon">SIGN</div>
+                <div class="logo-icon logo-audio">AUDIO</div>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="/"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/train"><i class="fas fa-hand-paper"></i> Training</a></li>
+                <li><a href="/sign_to_audio"><i class="fas fa-volume-up"></i> Recognition</a></li>
+                <li><a href="/audio_to_sign"><i class="fas fa-microphone"></i> Voice-to-Sign</a></li>
+            </ul>
+        </nav>
+
+        <section class="content-area">
+            <header class="hero-section">
+                <!-- <div class="badge">Major Project 2026</div> -->
+                <h1 class="glitch-text">Real-Time <span>Conversational</span> System</h1>
+                <p class="subtitle">Bridging the gap between speech and silence using AI Powered Hand Gesture Recognition.</p>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="creative-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-box">🤚</div>
+                        <h3>Train Gestures</h3>
+                        <p>Feed 60 frames of coordinate data into the neural network to learn custom signs.</p>
+                        <a href="/train" class="action-btn" style="position: relative; z-index: 999;" >Initialize Training</a>
+                    </div>
+                </div>
+
+                <div class="creative-card featured">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-box">🔊</div>
+                        <h3>Sign Recognition</h3>
+                        <p>Advanced Euclidean distance mapping for real-time speech synthesis from hand signs.</p>
+                        <a href="/sign_to_audio" style="position: relative; z-index: 999;" class="action-btn">Launch Camera</a>
+                         <!-- <button onclick="fetch('/sign_to_audio')">Launch Camera</button> -->
+
+                    </div>
+                </div>
+
+                <div class="creative-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-box">🎤</div>
+                        <h3>Audio To Sign</h3>
+                        <p>Speech-to-text processing paired with dynamic frame-stitching for sign animations.</p>
+                        <a href="/audio_to_sign" class="action-btn" style="position: relative; z-index: 999;">Start Listening</a>
+                    </div>
+                </div>
+
+               <div class="creative-card featured">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-box">🎬</div>
+                        <h3>Playback Video</h3>
+                        <p>Review previously generated complex sentence from the local cache.</p>
+                        <a href="/play_saved" class="action-btn" style="position: relative; z-index: 999;">Play Last Result</a>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-line"></div>
+                <p>© 2026 Real Time Smart Assistive Communication System | Department of CSE(AIML)</p>
+            </footer>
+        </section>
+    </main>
+
+</body>
+</html>

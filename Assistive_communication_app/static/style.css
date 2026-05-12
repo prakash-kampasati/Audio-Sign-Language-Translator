@@ -1,0 +1,252 @@
+:root {
+    --primary-neon: #00f2ff;
+    --secondary-neon: #7000ff;
+    --bg-dark: #080812;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- Dynamic Background --- */
+.animated-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 20% 30%, #1a1a3a 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, #25103a 0%, transparent 40%);
+    z-index: -2;
+}
+
+.mesh-gradient {
+    position: fixed;
+    width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* --- Layout Structure --- */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.side-nav {
+    width: 280px;
+    background: rgba(10, 10, 25, 0.8);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Update the Logo Container to keep them side-by-side */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between the two badges */
+    margin-bottom: 60px;
+}
+
+/* Base style for both badges */
+.logo-icon {
+    background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'Syncopate', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+/* Optional: If you want a slightly different gradient for AUDIO to distinguish them */
+.logo-audio {
+    background: linear-gradient(45deg, var(--secondary-neon), #ff00c8);
+    box-shadow: 0 0 15px rgba(112, 0, 255, 0.3);
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: none;
+}
+
+.nav-links a, .action-btn {
+    touch-action: manipulation;
+}
+
+.nav-links li.active {
+    background: rgba(0, 242, 255, 0.1);
+    border-left: 4px solid var(--primary-neon);
+    transition: none;
+}
+
+.nav-links a {
+    color: #a0a0c0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.content-area {
+    flex: 1;
+    padding: 60px 80px;
+}
+
+/* --- Hero Section --- */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(112, 0, 255, 0.2);
+    border: 1px solid var(--secondary-neon);
+    color: var(--secondary-neon);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.glitch-text {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.glitch-text span {
+    color: var(--primary-neon);
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.subtitle {
+    color: #a0a0c0;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+/* --- Creative Dashboard Cards --- */
+/* --- Updated Dashboard Grid for 1 Row --- */
+.dashboard-grid {
+    display: grid;
+    /* This allows up to 4 columns to fit in one row */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+}
+
+/* Slightly reduce card padding so they fit better side-by-side */
+.creative-card {
+    position: relative;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px 20px; /* Reduced from 40px */
+    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.creative-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--primary-neon);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(0,242,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.creative-card:hover .card-glow {
+    opacity: 1;
+}
+
+.icon-box {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.creative-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.creative-card p {
+    font-size: 14px;
+    color: #a0a0c0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- Buttons --- */
+/* Ensure all action buttons look identical */
+.action-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+    /* Clean shadow for all */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    border: none;
+    outline: none;
+}
+
+/* Hover state for all buttons */
+.action-btn:hover {
+    box-shadow: 0 8px 25px rgba(0, 242, 255, 0.3);
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* Fix for the "Playback Video" card specific glow bleed */
+.creative-card.featured .action-btn {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+/* --- Footer --- */
+footer {
+    margin-top: 80px;
+    text-align: left;
+}
+
+.footer-line {
+    width: 100px;
+    height: 4px;
+    background: var(--primary-neon);
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #606080;
+    font-size: 13px;
+}
